@@ -2,7 +2,7 @@ body {
     background-color: #0d1117;
     color: white;
     display: block;
-    justify-content: center;
+    
 }
 
 html {
@@ -14,7 +14,7 @@ header {
     font-size: 5rem;
     display: block;
     text-align: center;
-    padding: 1rem;
+    padding: 4rem;
 }
 
 section {
@@ -38,8 +38,11 @@ h1, h2 {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    
 }
-
+#connect_sec {
+    text-align: center;
+}
 
 form input, textarea,button{
    display: block;
@@ -56,4 +59,43 @@ label {
 #message a, #message span, #message button {
     display: inline-block;
     vertical-align: auto;
+}
+
+.nav-item{
+    display: inline;
+    padding: 10px;
+    
+}
+.menu {
+    background-color: azure;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+@media (max-width: 650px){
+    html {
+        font-size: 100%;
+    }
+    section {
+        width: fit-content;
+    }
+    header{
+        font-size: 2.5rem;
+        padding-top: 10rem;
+    }
+    .nav-item{
+        padding: 2px;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
 }
