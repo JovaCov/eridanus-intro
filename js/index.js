@@ -7,7 +7,7 @@ copyright.innerHTML = "Jovany Cortes Marure " + thisYear;
 myFooter.appendChild(copyright);
 
 
-const skills = ["Javascript", "HTML", "CSS", "Forklift Certified", "micosoft Word", "micosoft Powerpoint", "micosoft Excel"];
+const skills = ["Javascript", "HTML", "CSS", "Forklift Certified", "Python", "micosoft Word", "micosoft Powerpoint", "micosoft Excel"];
 const skillSection = document.getElementById('skill');
 console.log(skillSection);
 const skillsList = skillSection.querySelector('ul');
@@ -59,8 +59,6 @@ messageForm.addEventListener('submit', event => {
     messageForm.reset();
 });
 
-
-
 fetch('https://api.github.com/users/JovaCov/repos')
     .then(function (response) {
         return response.json();
@@ -71,9 +69,14 @@ fetch('https://api.github.com/users/JovaCov/repos')
         const projectList = projectSection.querySelector('ul');
     
         for (var i =0; i < response.length; i++){
-            var project = document.createElement('ul');
-            project.innerHTML = response[i].name;
+            const a = document.createElement('a');
+            var project = document.createElement('li');
+            a.href = response[i].html_url;
+            a.innerHTML = response[i].name;
+           
+            project.appendChild(a);
             projectList.appendChild(project);
+            
         }
     })
     .catch(e => {

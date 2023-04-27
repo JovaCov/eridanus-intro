@@ -1,5 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    
+}
+
 body {
-    background-color: #0d1117;
+    background-color: #28497a;
     color: white;
     display: block;
     
@@ -17,15 +27,14 @@ header {
     padding: 4rem;
 }
 
+
 section {
-    width: 56%;
+    width: 60%;
     margin: 0 auto; 
     margin-top: 1%;
     border-bottom: 1px solid rgb(4, 0, 255);
     padding: 1%;
-    
-
-
+    display: block;
 }
 
 h1, h2 {
@@ -43,59 +52,162 @@ h1, h2 {
 #connect_sec {
     text-align: center;
 }
-
-form input, textarea,button{
-   display: block;
-   margin: 0 auto;
-   text-align: center;
+img {
+    width: 100%;
+    max-width: 40px;
+    height: auto;
 }
 
-label {
+form {
     display: block;
-    text-align: center;
+    align-items: center;
 }
+form .field-area {
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
 
+}
+form .field-area input {
+   display: block;
+}
+form button {
+    display: block;
+}
+#project li {
+    background-color: #ffb60a;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+}
 
 #message a, #message span, #message button {
     display: inline-block;
     vertical-align: auto;
 }
 
-.nav-item{
-    display: inline;
-    padding: 10px;
-    
-}
-.menu {
-    background-color: azure;
-    color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
+nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 75px;
+    line-height: 75px;
+    background: #404040;
     
 }
 
-@media (max-width: 650px){
+nav .title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+nav .nav-list {
+    display: flex;
+}
+
+nav .nav-list .nav-item {
+    cursor: pointer;
+    height: 100%;
+    padding: 0 30px;
+    transition: .4s;
+ 
+}
+
+nav .nav-list .nav-item:hover {
+    background: #ffb60a;
+}
+
+nav .nav-list .nav-link {
+    color: #f1f1f1;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 1120px) {
+    nav {
+        padding: 0 2rem;
+    }
+
+    nav .nav-list .nav-item {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 675px){
+    
     html {
-        font-size: 100%;
+        font-size: 16px;
     }
     section {
-        width: fit-content;
+        width: auto;
     }
     header{
         font-size: 2.5rem;
-        padding-top: 10rem;
+        padding-top: 1rem;
     }
-    .nav-item{
-        padding: 2px;
+    nav .title {
+        z-index: 4;
+        padding: 0 50px;
     }
-    .menu {
-        flex-direction: column;
-        align-items: center;
+    
+    nav .title {
+        background-color: #404040;
     }
+
+    nav .nav-list {
+        display: grid;
+        position: absolute;
+        background: #404040;
+        width: 100%;
+        top: 75px;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 1;
+        transition: .6s;
+    }
+
+    nav .nav-list .nav-item {
+        padding-left: 35px;
+       
+    }
+
+    nav .navbar-toggler {
+        display: grid !important;
+        z-index: 2;
+    }
+
  
+}
+
+nav .navbar-toggler {
+    display: none;
+    height: min-content;
+    margin: 18px -10px 0 0;
+    cursor: pointer;
+}
+
+nav .navbar-toggler .bar {
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+
+input {
+    display: none;
+}
+
+input:checked ~ nav .nav-list {
+    transform: translateY(0);
+}
+
+input:checked ~ nav .navbar-toggler {
+    margin-top: 35px;
 }
