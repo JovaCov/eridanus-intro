@@ -7,7 +7,7 @@ copyright.innerHTML = "Jovany Cortes Marure " + thisYear;
 myFooter.appendChild(copyright);
 
 
-const skills = ["Javascript", "HTML", "CSS", "Forklift Certified", "micosoft Word", "micosoft Powerpoint", "micosoft Excel"];
+const skills = ["Javascript", "HTML", "CSS", "Forklift Certified", "Python", "micosoft Word", "micosoft Powerpoint", "micosoft Excel"];
 const skillSection = document.getElementById('skill');
 console.log(skillSection);
 const skillsList = skillSection.querySelector('ul');
@@ -59,20 +59,26 @@ messageForm.addEventListener('submit', event => {
     messageForm.reset();
 });
 
-const githubRequest = new XMLHttpRequest();
-
-githubRequest.open('GET', 'https://api.github.com/users/JovaCov/repos');
-githubRequest.send();
-githubRequest.onload = function(){
-    const repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
-    const projectSection = document.getElementById('project');
-    const projectList = projectSection.querySelector('ul');
-
-    for (var i =0; i < repositories.length; i++){
-    var project = document.createElement('ul');
-    project.innerHTML = repositories[i].name;
-    projectList.appendChild(project);
-    }
-};
-
+fetch('https://api.github.com/users/JovaCov/repos')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(response) {
+        console.log(response);
+        const projectSection = document.getElementById('project');
+        const projectList = projectSection.querySelector('ul');
+    
+        for (var i =0; i < response.length; i++){
+            const a = document.createElement('a');
+            var project = document.createElement('li');
+            a.href = response[i].html_url;
+            a.innerHTML = response[i].name;
+           
+            project.appendChild(a);
+            projectList.appendChild(project);
+            
+        }
+    })
+    .catch(e => {
+        console.log(e);
+    })

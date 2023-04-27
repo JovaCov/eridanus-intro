@@ -12,14 +12,28 @@
     </head>
 
     <body>
-        <div class="menu">
-            <div class="nav-item"><a href="#about_sec">about</a></div>
-            <div class="nav-item"><a href="#xp">Experience</a></div>
-            <div class="nav-item"><a href="#skill">Skill</div>
-            <div class="nav-item"><a href="#connect_sec">Connect</a></div>
-            <div class="nav-item"><a href="#lve-msg">Leave a Message</a></div>
-            <div class="nav-item"><a href="#message">Messages</a></div>
-        </div>
+        <input type="checkbox" id="toggle">
+
+        <nav class="menu">
+            <a class="title" href="#">JCM</a>
+            
+            <label class="navbar-toggler" for="toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#about_sec">about</a></div>
+                <li class="nav-item"><a class="nav-link" href="#xp">Experience</a></div>
+                <li class="nav-item"><a class="nav-link" href="#skill">Skill</div>
+                <li class="nav-item"><a class="nav-link" href="#connect_sec">Connect</a></div>
+                <li class="nav-item"><a class="nav-link" href="#lve-msg">Leave a Message</a></div>
+                <li class="nav-item"><a class="nav-link" href="#message">Messages</a></div>
+                <li class="nav-item"><a class="nav-link" href="#project">Projects</a></div>
+            </ul>
+            
+        </nav>
         <header>Jovany Cortes Marure</header>
 
         <section id="about_sec">
@@ -28,54 +42,63 @@
         </section>
 
         <section id="xp">
-            <h2>Experience</h2>
+            <h1>Experience</h2>
             <ul>
-                <li>the Building center</li>
+                <li>the Building center </li>
                 <li>LC america</li>
                 <li>ACC calculator project python</li>
             </ul>
         </section>
 
         <section id="skill">
-            <h2>Skills</h2>
+            <h1>Skills</h2>
             <ul>
 
             </ul>
         </section>
         
         <section id="project">
-            <h2>Projects</h2>
+            <h1>Projects</h2>
             <ul>
 
             </ul>
         </section>
-
-        <section id="connect_sec">
-            <h2>Connect</h2>
-            <a href="mailto:jovanycortezm@gmail.com">jovanycortezm@gmail.com</a>
-            <a href="https://github.com/JovaCov">Github JovaCov</a>
-        </section>
         
         <section id="lve-msg">
-            <h2>Leave a message</h2>
+            <h1>Leave a message</h2>
             <form name="leave_message">
-                <label>Name</label><br>
-                <input type="text" name="userName" required="true"><br>
-                <label>E-mail</label><br>
-                <input type="email" name="userEmail" required="true"><br>
-                <label>Message</label><br>
-                <textarea name="usersMessage" required="true"></textarea><br>
-                <button type="submit">Submit</button><br>
+                <div class="field-area">
+                    <label>Name</label>
+                    <input type="text" name="userName" required="true">
+                </div>
+                <div class="field-area">
+                    <label>E-mail</label>
+                    <input type="email" name="userEmail" required="true">
+                </div>
+                <div class="field-area">
+                    <label>Message</label>
+                    <textarea name="usersMessage" required="true"></textarea>
+                </div>
+                
+                <div class="field-area"><button type="submit">Submit</button></div>
+                         
             </form>
         </section>
 
         <section id="message">
-            <h2>Messages</h2>
+            <h1>Messages</h2>
             <ul>
 
             </ul>
         </section>
-        
+        <section id="connect_sec">
+            <h1>Connect</h2>
+            
+            <a href="mailto:jovanycortezm@gmail.com"><img src="gmail.png"></a>
+            
+            <a href="https://github.com/JovaCov"><img src="github.png"></a>
+            
+        </section>
         <section>
             <footer id="myFooter"></footer>
         </section>
